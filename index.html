@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <title>Code-quiz app</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="start-page" id="start-page">
+            <h1 class="header center">Welcome to the Coding Quiz</h1>
+            <p class="start-subtitle" id="intro">Press Start to begin quiz.  Once you begin the quiz, you will have 2 minutes to complete.  Wrong answers will deduct from your time.</p>
+        </div>
+        <div id="question-container" class="questions-page hide">
+            <div id="question">
+                <h1 id="question-title" class="header">Question</h1>
+            </div>
+            <div id="answers">
+                <button class="btn">Answer 1</button>
+                <button class="btn">Answer 2</button>
+                <button class="btn">Answer 3</button>
+                <button class="btn">Answer 4</button>
+            </div>
+            <div class="correct-txt hide" id="correct">
+                <p>Correct!</p>
+            </div>
+            <div class="wrong-txt hide" id="wrong">
+                <p>Wrong!</p>
+            </div>
+        </div>
+        <div id="final-page" class="final-page hide">
+
+        </div>
+        <div class="controls">
+            <button id="start-btn" class="start-btn btn">Start</button>
+            <button id="next-btn" class="next-btn btn hide">Next</button>
+            <button id="end-btn" class="end-btn btn hide">End Quiz</button>
+        </div>
+    </div>
+
+    <script src="/assets/js/script.js"></script>
+</body>
+</html>
