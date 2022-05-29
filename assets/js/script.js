@@ -8,10 +8,12 @@ const questionEl = document.getElementById("question")
 const answersEl = document.getElementById("answers")
 const correctAnswer = document.getElementById("correct")
 const wrongAnswer = document.getElementById("wrong")
+const timer = document.getElementById('timer')
 
 let shuffledQuestions = undefined
 let currentQuestionIndex = undefined
 let correctAnswerCounter = 0
+let count = 120
 
 
 startButton.addEventListener("click", startQuiz)
@@ -23,9 +25,23 @@ nextBtn.addEventListener('click', () => {
     wrongAnswer.classList.add('hide')
 })
 
+function startTimer() {
+    let interval = setInterval(() => {
+        document.getElementById("timer-el").innerHTML = "Time: " + count
+        count --
+        if (count === 0) {
+            clearInterval(interval)
+            endQuiz()
+            alert("You are out of time!")
+        }
+    }, 1000)
+}
+
 function startQuiz() {
     startButton.classList.add('hide')
     startPage.classList.add("hide")
+    startTimer()
+    timer.classList.remove("hide")
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
     console.log(questions)
@@ -100,6 +116,7 @@ function endQuiz() {
     questionsPage.classList.add('hide')
     endQuizPage.classList.remove('hide')
     endBtn.classList.remove('hide')
+    timer.classList.add('hide')
     let endQuizHeading = document.createElement("p")
     let ScorePercentage = Math.floor((correctAnswerCounter/6) * 100)
     endQuizHeading.innerText = "Your quiz has concluded, you have scored " + ScorePercentage + "% in your test."

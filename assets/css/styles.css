@@ -79,3 +79,13 @@ body {
 .center {
     text-align: center;
 }
+
+.questions-page {
+    position: relative;
+}
+
+.timer {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}

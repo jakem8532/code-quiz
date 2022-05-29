@@ -9,6 +9,11 @@
 </head>
 <body>
 
+    <div class="timer hide" id="timer">
+        <p id="timer-el">Time: </p>
+    </div>
+    <a href="#" i="high-score-el">View High Scores</a>
+
     <div class="container">
         <div class="start-page" id="start-page">
             <h1 class="header center">Welcome to the Coding Quiz</h1>
@@ -32,7 +37,10 @@
             </div>
         </div>
         <div id="final-page" class="final-page hide">
-
+            <form>
+                <label for="name">Enter Initials</label>
+                <input type="text" placeholder="Initials - Score" name="name" class="form-input">
+            </form>
         </div>
         <div class="controls">
             <button id="start-btn" class="start-btn btn">Start</button>
