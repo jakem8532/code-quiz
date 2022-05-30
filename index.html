@@ -12,8 +12,7 @@
     <div class="timer hide" id="timer">
         <p id="timer-el">Time: </p>
     </div>
-    <a href="#" i="high-score-el">View High Scores</a>
-
+    <a href="#" id="high-score-el" class="high-score-link">View High Scores</a>
     <div class="container">
         <div class="start-page" id="start-page">
             <h1 class="header center">Welcome to the Coding Quiz</h1>
@@ -38,14 +37,23 @@
         </div>
         <div id="final-page" class="final-page hide">
             <form>
+                <p id="end-message"></p>
                 <label for="name">Enter Initials</label>
-                <input type="text" placeholder="Initials - Score" name="name" class="form-input">
+                <input type="text" placeholder="Initials - Score" name="name" class="form-input" id="score-input">
+                <button id="end-btn" class="end-btn btn hide" type="submit">End Quiz</button>
             </form>
         </div>
+        <div class="score-div hide" id="score-div">
+            <h1>Your High Scores</h1>
+            <ul id="score-list">
+                
+            </ul>
+            <button id="exit" class="btn">Exit</button>
+        </div>
+    
         <div class="controls">
             <button id="start-btn" class="start-btn btn">Start</button>
             <button id="next-btn" class="next-btn btn hide">Next</button>
-            <button id="end-btn" class="end-btn btn hide">End Quiz</button>
         </div>
     </div>
 

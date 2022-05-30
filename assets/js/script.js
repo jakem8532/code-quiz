@@ -9,11 +9,18 @@ const answersEl = document.getElementById("answers")
 const correctAnswer = document.getElementById("correct")
 const wrongAnswer = document.getElementById("wrong")
 const timer = document.getElementById('timer')
+const endMesssage = document.getElementById('end-message')
+const highScoreLink = document.getElementById('high-score-el')
+const scoreEl = document.getElementById("score-div")
+const scoreList = document.getElementById("score-list")
+
+
 
 let shuffledQuestions = undefined
 let currentQuestionIndex = undefined
 let correctAnswerCounter = 0
 let count = 120
+let quizEnder = false
 
 
 startButton.addEventListener("click", startQuiz)
@@ -24,6 +31,22 @@ nextBtn.addEventListener('click', () => {
     correctAnswer.classList.add('hide')
     wrongAnswer.classList.add('hide')
 })
+endBtn.addEventListener('click', () => {
+    const scoreInput = document.getElementById('score-input')
+    if(scoreInput.value) {
+        localStorage.setItem("initials + score", scoreInput.value)
+    }
+})
+highScoreLink.addEventListener('click', () => {
+    startPage.classList.add('hide')
+    questionsPage.classList.add('hide')
+    endQuizPage.classList.add('hide')
+    startButton.classList.add('hide')
+    nextBtn.classList.add('hide')
+    endBtn.classList.add('hide')
+    scoreEl.classList.remove('hide')
+
+})
 
 function startTimer() {
     let interval = setInterval(() => {
@@ -33,6 +56,8 @@ function startTimer() {
             clearInterval(interval)
             endQuiz()
             alert("You are out of time!")
+        }else if (quizEnder) {
+            clearInterval(interval)
         }
     }, 1000)
 }
@@ -42,6 +67,7 @@ function startQuiz() {
     startPage.classList.add("hide")
     startTimer()
     timer.classList.remove("hide")
+    quizEnder = false
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
     console.log(questions)
@@ -92,6 +118,7 @@ function selectAnswer(event) {
         correctAnswerCounter++
     }else {
         wrongAnswer.classList.remove("hide")
+        count = count - 15
     }
     nextBtn.classList.remove('hide')
 }
@@ -113,14 +140,22 @@ function clearStatusClass(element) {
 }
 
 function endQuiz() {
+    quizEnder = true
     questionsPage.classList.add('hide')
     endQuizPage.classList.remove('hide')
     endBtn.classList.remove('hide')
     timer.classList.add('hide')
-    let endQuizHeading = document.createElement("p")
     let ScorePercentage = Math.floor((correctAnswerCounter/6) * 100)
-    endQuizHeading.innerText = "Your quiz has concluded, you have scored " + ScorePercentage + "% in your test."
-    endQuizPage.appendChild(endQuizHeading)
+    let endQuizHeading = "Your quiz has concluded, you have scored " + ScorePercentage + "% in your test."
+    endMesssage.innerText = endQuizHeading
+}
+
+function loadScores() {
+    let savedScores = JSON.parse(localStorage.getItem("initials + score"))
+    if(!savedScores) {
+        return false
+    }
+
 }
 const questions = [
     {
