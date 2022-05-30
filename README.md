@@ -8,11 +8,11 @@
 
 ## Screenshot
 
-<img src="./assets/img/ss-1">
-<img src="./assets/img/ss-5">
-<img src="./assets/img/ss-4">
-<img src="./assets/img/ss-3">
-<img src="./assets/img/ss-2">
+<img src="./assets/img/ss-1.png">
+<img src="./assets/img/ss-5.png">
+<img src="./assets/img/ss-4.png">
+<img src="./assets/img/ss-3.png">
+<img src="./assets/img/ss-2.png">
 
 ## Links
 
