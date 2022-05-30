@@ -13,6 +13,7 @@ const endMesssage = document.getElementById('end-message')
 const highScoreLink = document.getElementById('high-score-el')
 const scoreEl = document.getElementById("score-div")
 const scoreList = document.getElementById("score-list")
+const exitBtn = document.getElementById("exit")
 
 
 
@@ -45,7 +46,16 @@ highScoreLink.addEventListener('click', () => {
     nextBtn.classList.add('hide')
     endBtn.classList.add('hide')
     scoreEl.classList.remove('hide')
+    exitBtn.classList.remove('hide')
+    
 
+})
+
+exitBtn.addEventListener('click', () => {
+    startPage.classList.remove('hide')
+    startButton.classList.remove('hide')
+    exitBtn.classList.add('hide')
+    scoreEl.classList.add("hide")
 })
 
 function startTimer() {
