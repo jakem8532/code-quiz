@@ -16,5 +16,5 @@
 
 ## Links
 
-https://jakem8532.github.io/code-quiz/
-https://github.com/jakem8532/code-quiz
+- https://jakem8532.github.io/code-quiz/
+- https://github.com/jakem8532/code-quiz
