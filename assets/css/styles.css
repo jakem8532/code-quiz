@@ -11,7 +11,6 @@
 }
 
 body {
-    position: relative;
     margin: 0;
     padding: 0;
     display: flex;
@@ -19,7 +18,6 @@ body {
     height: 100vh;
     justify-content: center;
     align-items: center;
-    
 }
 
 .correct-txt{
@@ -96,8 +94,7 @@ body {
     position: absolute;
     top: 20px;
     left: 20px;
-    color: #62467a;
-    font-weight: 700;
+    color: #3e3248;
     text-decoration: none;
 }
 
